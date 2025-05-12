@@ -32,8 +32,7 @@ h1 {
 h2,
 h3,
 h4,
-h5,
-p {
+h5 {
   color: $color-text-main;
 }
 
@@ -73,6 +72,7 @@ h3 {
 }
 
 p {
+  color: $color-gray;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.15px;
