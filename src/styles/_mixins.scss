@@ -1,0 +1,19 @@
+@use './variables';
+
+@mixin on-tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+};
+
+@mixin on-desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+};
+
+@mixin grid-layout {
+    display: grid;
+    gap: 16px
+    
+}
