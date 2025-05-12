@@ -1,48 +1,123 @@
 @import './fonts';
 @import './mixins';
-@import './reset';
-@import './variables'; 
+@import './variables';
 
-html {
-  scroll-behavior: smooth;
+:root {
   box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-body {
   font-family: 'CrimsonText', serif;
+  line-height: 1.4;
   font-weight: 400;
   background-color: $color-background;
-  color: $color-text-main;
-  line-height: 1.6;
+  color: $color-gray;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: $color-background;
+  font-weight: 700;
+  font-size: 36px;
+
+  @include on-tablet {
+    font-size: 48px;
+  }
+
+  @include on-desktop {
+    font-size: 56px;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+p {
+  color: $color-text-main;
 }
 
 a {
-  color: inherit;
+  color: $color-link;
   text-decoration: none;
+
+  &:hover {
+    color: $color-gray;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: $color-gray;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+
+  @include on-tablet {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.15px;
 }
 
 button {
-  font: inherit;
+  border-radius: $border-radius;
+  padding-inline: 48px;
+  color: $color-background;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0px;
+  text-align: center;
+  border: none;
   cursor: pointer;
-  background: transparent;
-  border: none;
+  background-color: $color-background-button;
+
+  &:hover {
+    background-color: $color-background-btn-hover;
+  }
+
+  &:active {
+    background-color: $color-text-main;
+  }
 }
 
-input, textarea, select {
-  font: inherit;
-  background: transparent;
-  border: none;
-  outline: none;
-}
+input {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  color: $color-gray;
+  background-color: $color-background;
 
-img, picture, video {
-  max-width: 100%;
-  display: block;
-  height: auto;
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:hover {
+    border-color: $border-input-hover;
+    color: $color-text-main;
+  }
+
+  &:active {
+    border-color: $color-background-button;
+    color: $color-text-main;
+  }
 }
